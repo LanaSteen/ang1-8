@@ -1,0 +1,66 @@
+ <div class="burger" (click)="burger()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+ </div>
+
+<main [className]="showhide">
+    <p (click)="print()">hello {{name}}</p>
+
+    <img [src]="" alt="">
+    <input [type]="tp" [placeholder]="name">
+
+    <button (click)="print()"> {{btntext}} </button>
+</main>
+
+
+
+
+
+
+<section>
+  @if(textshow){
+   <h1>hello angular</h1>
+
+   @if(gamarjobaShow){
+     <p>gamarjoba</p>
+   }
+  }
+</section>
+
+
+
+@for(el of numArr; track  $index){
+     <li>{{el}}  {{$index}}</li>
+}
+
+
+<button (click)="showProducts()">{{btnText}}</button>
+
+<div class="btns">
+  <button>All</button>
+    @for (item of productCategories; track $index) {
+       <button (click)="getId(item)">{{item.name}}</button>
+    }
+</div>
+
+
+<!-- 
+@if(productsIsShown){
+  <div class="cont">
+     @for (item of products; track $index) {
+      <div class="card" style="width: 18rem;">
+        <img [src]="item.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+       
+     }
+</div>
+
+} -->
+
+
