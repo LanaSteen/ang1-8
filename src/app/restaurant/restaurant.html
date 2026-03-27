@@ -1,0 +1,27 @@
+<!-- *ngFor *ngIf -->
+
+<input type="text" [(ngModel)]="search" (ngModelChange)="filter($event)" />
+<h2>{{ search }}</h2>
+
+<!-- <input type="text"  [(ngModel)]="search" >
+<button (click)="filter2()">Filter</button>
+<h1>user name : {{userName}}</h1> -->
+<h2>{{ search }}</h2>
+
+<!-- ახალია და ცვლადია -->
+@let ramderproduct = filteredProduct.length > 0 ? filteredProduct : products;
+
+<main class="d-flex" style="flex-wrap: wrap; gap: 20px">
+  @for (item of ramderproduct; track $index) {
+    <!-- <div class="card" style="width: 18rem;" (click)="printId(item.id, item.name)"> -->
+    <div class="card" style="width: 18rem" (click)="printItem(item)">
+      <img [src]="item.image" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text">${{ item.price }}</p>
+        <p class="card-text">{{ item.categoryId }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  }
+</main>
