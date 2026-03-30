@@ -1,5 +1,16 @@
 <!-- *ngFor *ngIf -->
 
+
+<button (click)="sort()">price {{asc}}</button>
+
+<div class="btns">
+  <button (click)="showAll()">All</button>
+    @for (item of categories; track item.id) {
+         <button (click)="filteByCategory(item.id)">{{item.name}}</button>
+    }
+</div>
+
+
 <input type="text" [(ngModel)]="search" (ngModelChange)="filter($event)" />
 <h2>{{ search }}</h2>
 

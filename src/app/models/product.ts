@@ -14,6 +14,13 @@ export class Product {
 }
 // 25
 
+export class CategoryBtn {
+    id!: number;
+    name!:string
+}
+
+
+
 export enum Category {
   salads = "Salads with vegitables",
   soups = 2,

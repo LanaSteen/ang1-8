@@ -1,0 +1,19 @@
+
+
+
+<h1>To Do App</h1>
+
+<input type="text" [(ngModel)]="name" >
+<button (click)="addTask()" >Add</button>
+
+
+<div class="rows">
+   @for (item of taskArr; track $index) {
+     <div class="row1">
+        <span [className]="item.isCompleted ? 'comp' : ''">{{item.title}}</span>
+        <button  (click)="completeTask(item)" >{{item.isCompleted ? "Undo" : "Complete"}}</button>
+        <!-- <button (click)="deleteTask(item)">x</button> -->
+             <button (click)="deleteTask($index)">x</button>
+    </div>
+   }
+</div>

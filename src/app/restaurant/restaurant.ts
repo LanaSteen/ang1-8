@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category, Product } from '../models/product';
+import { Category, CategoryBtn, Product } from '../models/product';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,15 +15,15 @@ import { FormsModule } from '@angular/forms';
 // angular2+
 
 export class Restaurant {
+  
 
  ngOnInit(){
     this.filteredProduct = this.products
     this.printItem(this.products[0])
     console.log(this.sum());
-
-    
-    
   }
+
+  
 
   sum(){
      return 2+4
@@ -39,6 +39,27 @@ export class Restaurant {
 
 search =  "rame"
 userName =""
+
+asc = "Asc"
+
+sort(){
+    if(this.asc == "Asc"){
+      this.asc = "Desc"
+    
+      this.filteredProduct = this.filteredProduct.sort((a,b) => {
+        if(a.price && b.price){
+           return a.price - b.price
+        }
+        return 0
+      })
+    }
+    else{
+       this.asc = "Asc"
+        this.filteredProduct = this.filteredProduct.sort((a,b) =>  b.price! - a.price!)
+      
+      }
+    }
+
 
 filter2(){
   console.log(this.search);
@@ -102,9 +123,56 @@ printItem(item : Product){
   }
 ]
 
+showAll(){
+     this.filteredProduct = []
+}
+filteByCategory(id : number){
+   this.filteredProduct = this.products.filter(el => el.categoryId == id)
+}
+
+categories : CategoryBtn[]= [
+ 
+  {
+    "id": 1,
+    "name": "Salads"
+  },
+  {
+    "id": 2,
+    "name": "Soups"
+  },
+  {
+    "id": 3,
+    "name": "Chicken-Dishes"
+  },
+  {
+    "id": 4,
+    "name": "Beef-Dishes"
+  },
+  {
+    "id": 5,
+    "name": "Seafood-Dishes"
+  },
+  {
+    "id": 6,
+    "name": "Vegetable-Dishes"
+  },
+  {
+    "id": 7,
+    "name": "Bits&Bites"
+  },
+  {
+    "id": 8,
+    "name": "On-The-Side"
+  }
+]
+
+
 
 
 }
+
+
+
 
 
 
