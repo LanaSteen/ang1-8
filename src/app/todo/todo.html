@@ -1,19 +1,43 @@
+<!-- *ngIf  *ngFor  -->
 
-
+<div class="app">
 
 <h1>To Do App</h1>
 
+
 <input type="text" [(ngModel)]="name" >
-<button (click)="addTask()" >Add</button>
+<p [ngStyle]="{'color' : isRed ? 'red' : 'blue' }">priority : {{priority}}</p>
+<input type="range" min="1" max="5" [(ngModel)]="priority">
+<button (click)="addTask()" >{{add}}</button>
 
+<select name="" id="" [(ngModel)]="seletPriority" (ngModelChange)="filterByPriority($event)">
+   <option value="-1">All</option>
+   <option value="5">5</option>
+    <option value="4">4</option>
+    <option value="3">3</option>
+    <option value="2">2</option>
+    <option value="1">1</option>
+</select>
 
+<div class="sortCont">
+     <button (click)="sort()">Sort By Priority {{direction}}</button>
+</div>
 <div class="rows">
    @for (item of taskArr; track $index) {
      <div class="row1">
-        <span [className]="item.isCompleted ? 'comp' : ''">{{item.title}}</span>
+      <!-- <span class="rame" [class.comp]="true">{{item.title}}</span> -->
+       <span class="rame" [class]="{'comp' : item.isCompleted }">{{item.title}}</span>
+        <!-- <span class="rame" [className]="item.isCompleted ? 'comp' : ''">{{item.title}}</span> -->
+        <span> {{"⭐".repeat(item.priority)}} {{'☆'.repeat(5-item.priority)}} </span>
         <button  (click)="completeTask(item)" >{{item.isCompleted ? "Undo" : "Complete"}}</button>
+        <button [ngClass]="{compForEditBtn : item.isCompleted}" (click)="editTask(item, $index)">🖉</button>
         <!-- <button (click)="deleteTask(item)">x</button> -->
              <button (click)="deleteTask($index)">x</button>
     </div>
    }
+</div>
+
+
+
+  <!-- your existing code -->
 </div>

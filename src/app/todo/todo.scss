@@ -3,3 +3,171 @@
 .comp{
    text-decoration: line-through;
 }
+
+
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container */
+h1 {
+  text-align: center;
+//   color: #fff;
+  margin-top: 20px;
+}
+
+/* Inputs */
+input[type="text"] {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 15px;
+  width: 250px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+input[type="range"] {
+  display: block;
+  margin: 10px auto;
+  width: 200px;
+}
+
+/* Priority text */
+p {
+  text-align: center;
+//   color: #fff;
+  font-weight: 500;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 5px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Add button */
+button:first-of-type {
+  background-color: #4caf50;
+  color: white;
+}
+
+button:first-of-type:hover {
+  background-color: #45a049;
+}
+
+/* Select dropdown */
+select {
+  display: block;
+  margin: 15px auto;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+/* Sort container */
+.sortCont {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Task list container */
+.rows {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Each task row */
+.row1 {
+  background: #fff;
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.row1:hover {
+  transform: scale(1.02);
+}
+
+/* Task text */
+.row1 span:first-child {
+  flex: 1;
+  font-size: 16px;
+}
+
+/* Completed task */
+.comp {
+  text-decoration: line-through;
+  color: gray;
+}
+.rame{
+   font-style: italic;
+}
+
+/* Stars */
+.row1 span:nth-child(2) {
+  margin: 0 10px;
+  color: #fbc02d;
+  font-size: 16px;
+}
+
+/* Action buttons */
+.row1 button {
+  background-color: #eee;
+}
+
+.row1 button:hover {
+  background-color: #ddd;
+}
+
+/* Complete button */
+.row1 button:nth-child(3) {
+  background-color: #2196f3;
+  color: white;
+}
+
+.row1 button:nth-child(3):hover {
+  background-color: #1976d2;
+}
+
+/* Delete button */
+.row1 button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.row1 button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+.app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+input{
+   border: 1px solid skyblue !important;
+}
+
+
+.compForEditBtn{
+    background-color: red !important;
+}
