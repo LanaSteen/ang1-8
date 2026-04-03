@@ -15,9 +15,17 @@ export const routes: Routes = [
     path : "restaurant",
     loadComponent : () => import('./restaurant/restaurant').then(m => m.Restaurant)
   },
+   {
+    path : "restaurantapi",
+    loadComponent : () => import('./restaurantapi/restaurantapi').then(m => m.Restaurantapi)
+  },
   {
     path : "todo",
     loadComponent : () => import('./todo/todo').then(m => m.Todo)
+  },
+    {
+    path : "details",
+    loadComponent : () => import('./details/details').then(m => m.Details)
   },
   {
     path : "**",
@@ -34,3 +42,6 @@ export const routes: Routes = [
   //   component : Home
   // },
 // lazy loading 
+
+
+// defer 

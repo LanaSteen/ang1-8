@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Category, CategoryBtn, Product } from '../models/product';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterModule } from "@angular/router";
+import { Helper } from '../services/helper';
 
 @Component({
   selector: 'app-restaurant',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './restaurant.html',
   styleUrl: './restaurant.scss',
 })
@@ -15,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 // angular2+
 
 export class Restaurant {
+
+
+  constructor(private help : Helper){}
   
 
  ngOnInit(){
@@ -43,6 +48,7 @@ userName =""
 asc = "Asc"
 
 sort(){
+     this.help.print()
     if(this.asc == "Asc"){
       this.asc = "Desc"
     

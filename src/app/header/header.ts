@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterModule } from "@angular/router";
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +9,11 @@ import { RouterLink, RouterModule } from "@angular/router";
   styleUrl: './header.scss',
 })
 export class Header {
+  useNAme = 'header John ';
 
- useNAme = "header John "
-
- active = "active"
-
-
+  active = 'active';
 }
-
-
 
 // FormsModule   [(ngModel)]
 // CommonModule  [ngClass]  [ngStyle]
-// RouterModule   routing ის routerLink 
+// RouterModule   routing ის routerLink

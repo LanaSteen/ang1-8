@@ -15,10 +15,11 @@ export class Error {
 
   }
 
+  id = 123
 
   gotohome(){
     //  this.route.navigate(["/home"],{})
-    this.route.navigateByUrl("/home")
+    this.route.navigateByUrl(`/home?id=${this.id}`)
   }
 }
 

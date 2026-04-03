@@ -1,5 +1,15 @@
 
-
+export class Product2 {
+    id! : number;
+    name? : string;
+    price? : number;
+    nuts? : boolean;
+    image? : string;
+    vegeterian? : boolean;
+    spiciness? : number;
+    categoryId? : number;
+    
+}
 
 export class Product {
     id! : number;
