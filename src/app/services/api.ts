@@ -10,6 +10,13 @@ export class Api {
 
 
  baseUrl = "https://restaurant.stepprojects.ge/api/"
+ baseUrl2= "https://restaurantapi.stepacademy.ge/api/"
+
+
+ getAll2(url : string){
+  return  this.http.get(this.baseUrl2 + url)
+ }
+
 
  getAll(url : string){
   return  this.http.get(this.baseUrl+url)

@@ -5,3 +5,17 @@
 @for (item of productArr; track $index) {
   <h1>{{item.name}}</h1>
 }
+
+
+
+@for (item of productArr3; track $index) {
+  <img [src]="item.image" alt="" width="200">
+}
+
+
+
+
+
+@if (err()) {
+  <app-error-dialog></app-error-dialog>
+}

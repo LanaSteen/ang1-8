@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Component, effect, signal } from '@angular/core';
+import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Auth } from '../services/auth';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,33 @@ import { RouterLink, RouterModule } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
+
+  constructor(private auth : Auth, private router : Router){
+    effect(() => {
+     this.auth.isLogedIn() ? this.logText = "Log Out" : this.logText = "Log In"
+     this.isAuth.set(this.auth.isLogedIn())
+        
+    })
+  }
+
+
+  isAuth = signal(false)
+
+  goToLoginOrLogOut(){
+     if(this.logText == "Log Out"){
+          this.auth.logout()
+             this.router.navigateByUrl("/login")
+     }
+     else{
+        this.router.navigateByUrl("/login")
+     }
+  }
+
   useNAme = 'header John ';
 
   active = 'active';
+
+  logText = "Log In"
 }
 
 // FormsModule   [(ngModel)]

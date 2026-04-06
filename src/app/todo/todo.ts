@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class Todo {
 
   ngOnInit(){
-    this.taskArr = JSON.parse(localStorage.getItem("tasks") || "" )
+    this.taskArr = JSON.parse(localStorage.getItem("tasks") || '[]' )
   }
 
 
@@ -27,7 +27,7 @@ seletPriority = 1
 add = "Add"
 
 filterByPriority(event : any){
-    this.taskArr = JSON.parse(localStorage.getItem("tasks") || "" )
+    this.taskArr = JSON.parse(localStorage.getItem("tasks") || "[]" )
     if(this.seletPriority != -1){
       this.taskArr = this.taskArr.filter(el => el.priority == this.seletPriority)
     }

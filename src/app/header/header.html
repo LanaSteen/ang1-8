@@ -7,6 +7,10 @@
     <li><a routerLink="/restaurant" routerLinkActive="x">Restaurant</a></li>
         <li><a routerLink="/restaurantapi" routerLinkActive="x">Restaurantapi</a></li>
     <li><a routerLink="/todo" routerLinkActive="x">Todo</a></li>
+    <li ><a  (click)="goToLoginOrLogOut()"> {{logText}} </a></li>
+
+    <h1>{{isAuth()}}</h1>
     <!-- <li><p routerLink="/home">home second</p></li> -->
+     <!-- routerLink="/login" -->
   </ul>
 </nav>
