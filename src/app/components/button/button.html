@@ -1,0 +1,7 @@
+@if (cliCount > 0) {
+  <button class="btn btn-danger" (click)="sentInfoToParent()">{{btnText}} {{cliCount}}</button>
+}
+@else {
+    <button class="btn btn-danger" (click)="sentInfoToParent()">{{btnText}}</button>
+
+}

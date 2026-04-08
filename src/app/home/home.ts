@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { Button } from "../components/button/button";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Button],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
   
   //  let const functin 
+  childBtnText = "see more porducts"
+  
+  changeChildTextInBtn(){
+    this.childBtnText = "see less products"
+  }
+
   name = "john"
   age = 50
   tp = "color"
@@ -23,8 +30,14 @@ export class Home {
   btnText = "Show products"
 
   numArr = [20,60,30,50]
+  printFRomChild(event : any){
+        console.log("info from child " + event);
+        
+  }
 
   print(){
+    this.changeChildTextInBtn()
+    localStorage.setItem("token", "123")
     this.btntext == "Log out" ? this.btntext  = "Log in" 
     : this.btntext = "Log out"
   

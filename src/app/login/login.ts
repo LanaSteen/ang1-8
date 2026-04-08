@@ -19,5 +19,6 @@ export class Login {
   
   login(){
    this.auth.login()
+   
   }
 }

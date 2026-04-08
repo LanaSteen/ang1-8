@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,8 @@ export const routes: Routes = [
   },
    {
     path : "restaurantapi",
-    loadComponent : () => import('./restaurantapi/restaurantapi').then(m => m.Restaurantapi)
+    loadComponent : () => import('./restaurantapi/restaurantapi').then(m => m.Restaurantapi),
+    canActivate : [authGuard]
   },
   {
     path : "todo",

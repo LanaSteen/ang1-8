@@ -1,3 +1,7 @@
+ 
+ <app-button [btnText] = "'rame'"></app-button>
+ <app-button [btnText]= "childBtnText" [cliCount]="200" (infoFromChild)="printFRomChild($event)"></app-button>
+
  <div class="burger" (click)="burger()">
     <div class="line"></div>
     <div class="line"></div>

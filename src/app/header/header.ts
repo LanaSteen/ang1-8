@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, effect, signal } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
+import { Button } from "../components/button/button";
 
 @Component({
   selector: 'app-header',
-  imports: [RouterModule],
+  imports: [RouterModule, Button],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
