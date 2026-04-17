@@ -1,0 +1,58 @@
+<p>login-api works!</p>
+
+<!-- template driven from -->
+
+<!-- <form action="" #myLoginForm="ngForm" (ngSubmit)="login(myLoginForm)">
+    <input type="email" [(ngModel)]="loginUser.email" name="email" email #email="ngModel" ngModel>
+    <input type="password" [(ngModel)]="loginUser.password" name="password" password>
+    <button type="submit">Log In</button>
+</form> -->
+
+<form action="" #myLoginForm="ngForm" (ngSubmit)="login(myLoginForm)">
+  <input 
+  type="email" 
+  [(ngModel)]="loginUser.email" 
+  name="email" 
+  email 
+  #email="ngModel" 
+  ngModel
+  required 
+  />
+
+  @if (email.invalid) {
+   <p style="color:red">emeil is not valid</p>
+  }
+  
+
+  <input type="password" 
+  [(ngModel)]="loginUser.password" 
+  name="password" 
+  ngModel 
+  password 
+  #password="ngModel"
+  minlength="6"
+  pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@.]{6,}$"
+  required
+  />
+
+  @if(password.invalid && password.touched && password.errors?.['required']){
+    <p style="color:red">password is required</p>
+
+  }
+  @if(password.invalid && password.touched && password.errors?.['minlength']){
+    <p style="color:red">password must be</p>
+
+  }
+    @if(password.invalid && password.touched && password.errors?.['pattern']){
+    <p style="color:red">password mustst contain .....</p>
+
+  }
+
+
+  <button type="submit" [disabled]="!myLoginForm.valid" >Log In</button>
+</form>
+
+
+
+
+<!-- Cookie : dfgfhhjkl -->

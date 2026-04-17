@@ -33,6 +33,10 @@ export const routes: Routes = [
     path : "login",
     loadComponent : () => import('./login/login').then(m => m.Login)
   },
+   {
+    path : "loginapi",
+    loadComponent : () => import('./login-api/login-api').then(m => m.LoginApi)
+  },
   {
     path : "**",
     loadComponent : () => import('./error/error').then(m => m.Error)
