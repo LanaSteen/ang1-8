@@ -3,6 +3,7 @@ import { Component, effect, signal } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
 import { Button } from "../components/button/button";
+import { AlertServ } from '../services/alert-serv';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { Button } from "../components/button/button";
 })
 export class Header {
 
-  constructor(private auth : Auth, private router : Router){
+  constructor(private auth : Auth, private router : Router, private alert : AlertServ){
     effect(() => {
      this.auth.isLogedIn() ? this.logText = "Log Out" : this.logText = "Log In"
      this.isAuth.set(this.auth.isLogedIn())
@@ -25,6 +26,10 @@ export class Header {
 
   goToLoginOrLogOut(){
      if(this.logText == "Log Out"){
+         
+        this.alert.show("Do you want to log out?")
+
+
           this.auth.logout()
              this.router.navigateByUrl("/login")
      }

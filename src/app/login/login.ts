@@ -6,7 +6,10 @@ import { Auth } from '../services/auth';
   imports: [],
   templateUrl: './login.html',
   styleUrl: './login.scss',
+ 
 })
+
+
 export class Login {
 
 
@@ -22,3 +25,8 @@ export class Login {
    
   }
 }
+
+
+
+
+

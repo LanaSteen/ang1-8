@@ -16,6 +16,11 @@ export class ForSignal {
     this.num1.update(val => val+1)
    
   }
+
+  redce(){
+    this.num1.set(50)
+    this.num1.update(val => val-1)
+  }
   resetNumber(){
 
      this.num1.set(0)
