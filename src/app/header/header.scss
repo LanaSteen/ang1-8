@@ -1,5 +1,10 @@
-
-
-.x{
+.x {
   background-color: yellow;
 }
+
+:host {
+  display: flex;
+  background-color: skyblue !important;
+}
+
+

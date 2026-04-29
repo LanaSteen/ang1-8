@@ -1,0 +1,37 @@
+<p>pipe-test works!</p>
+
+
+
+
+<h1>{{text | uppercase}}</h1>
+
+<h1>{{text | lowercase}}</h1>
+
+<h1>{{text | titlecase}}</h1>
+
+
+<p>{{price | currency }}</p>
+<p>{{price | currency:'EUR' }}</p>
+<p>{{price | currency:'GEL' }}</p>
+<p>{{price | currency:'GBP' }}</p>
+
+<h1>{{date | date:'fullDate'}}</h1>
+<h1>{{date | date:'shortDate'}}</h1>
+<h1>{{date | date:'yyyy-MM-dd'}}</h1>
+<h1>{{date | date:'dd/M/yy'}}</h1>
+
+<h1>{{date | date:'shortTime'}}</h1>
+<h1>{{date | date:'longTime'}}</h1>
+
+
+<h1>{{text | slice:1:5}}</h1>
+
+<h2>{{formatString(text)}}</h2>
+
+
+<!-- "text"
+"t.e.x.t"
+
+"tbilisi, dfgdghgj, fgghg," -->
+
+

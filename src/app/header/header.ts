@@ -4,10 +4,11 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
 import { Button } from "../components/button/button";
 import { AlertServ } from '../services/alert-serv';
+import { Nums } from '../directives/nums';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterModule, Button],
+  imports: [RouterModule, Button, Nums],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

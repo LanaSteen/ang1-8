@@ -45,7 +45,6 @@ export class Details {
 
   ngOnInit(){
      this.helpeer.print()
-
   }
 
 

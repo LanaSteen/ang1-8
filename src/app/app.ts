@@ -8,17 +8,17 @@ import { RouterOutlet } from '@angular/router';
 import { ForSignal } from './for-signal/for-signal';
 import { Alert } from './components/alert/alert';
 import { AlertServ } from './services/alert-serv';
+import { PipeTest } from './pipe-test/pipe-test';
+import { TemplateTest } from './template-test/template-test';
 
 @Component({
   selector: 'app-root',
   // imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  imports: [RouterOutlet, Footer, Header, Home, Restaurant, Todo, ForSignal, Alert],
+  imports: [RouterOutlet, Footer, Header, Home, Restaurant, Todo, ForSignal, Alert, PipeTest, TemplateTest],
 })
 export class App {
-
-
   constructor(public alert : AlertServ){
 
   }

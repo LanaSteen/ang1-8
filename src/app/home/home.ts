@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { Button } from "../components/button/button";
+import { Scarry } from '../directives/scarry';
 
 @Component({
   selector: 'app-home',
-  imports: [Button],
+  imports: [Button, Scarry],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
