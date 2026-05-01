@@ -11,6 +11,7 @@ import { Nums } from '../directives/nums';
   imports: [RouterModule, Button, Nums],
   templateUrl: './header.html',
   styleUrl: './header.scss',
+  
 })
 export class Header {
 
